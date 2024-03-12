@@ -7,15 +7,7 @@ public class MonsterMovement : MonoBehaviour
 {
 
     [SerializeField] float Speed;
-
     [SerializeField] private Rigidbody2D rb;
-
-    public GameObject P_A;
-
-    public GameObject P_B;
-
-    [SerializeField] private Transform currentPoint;
-
 
     void Start()
     {
@@ -29,6 +21,17 @@ public class MonsterMovement : MonoBehaviour
         Patrolling();
     }
 
+
+
+
+
+
+
+
+
+    [SerializeField] public GameObject P_A;
+    [SerializeField] public GameObject P_B;
+    [SerializeField] private Transform currentPoint;
 
 
     //All the movement Code

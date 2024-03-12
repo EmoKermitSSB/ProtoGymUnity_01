@@ -5,26 +5,6 @@ using static UnityEditor.Searcher.SearcherWindow.Alignment;
 
 public class movement : MonoBehaviour
 {
-
-    [SerializeField] int Speed;
-
-    [SerializeField] int DashSpeed;
-
-    [SerializeField] bool isGrounded = false;
-
-    [SerializeField] private Rigidbody2D rb;
-
-    [SerializeField] int JumpingPower;
-
-    [SerializeField] Transform GroundCheckCollider;
-
-    [SerializeField] const float GroundCheckRadius = 0.2f;
-
-    [SerializeField] LayerMask GroundLayer;
-
-    [SerializeField] float NbJump = 2;
-
-
     void Start()
     {
 
@@ -37,6 +17,14 @@ public class movement : MonoBehaviour
         moving();
     }
 
+
+
+
+    [SerializeField] bool isGrounded = false;
+    [SerializeField] Transform GroundCheckCollider;
+    [SerializeField] const float GroundCheckRadius = 0.2f;
+    [SerializeField] LayerMask GroundLayer;
+
     //Ground Check who's detecting with a collider if the player is walking on the ground or flying
     void GroundCheck()
     {
@@ -47,7 +35,7 @@ public class movement : MonoBehaviour
             isGrounded = true;
     }
 
-    //Here for Checking if the ground is colliding with the player or no
+    /*Here for Checking if the ground is colliding with the player or no
     void OnCollisionEnter2D(Collision2D other)
     {
         if (other.gameObject.CompareTag("World"))
@@ -62,9 +50,26 @@ public class movement : MonoBehaviour
         {
             isGrounded = false;
         }
-    }
+    }*/
 
 
+
+
+
+
+
+
+
+
+    [SerializeField] int Speed;
+
+    [SerializeField] int DashSpeed;
+
+    [SerializeField] private Rigidbody2D rb;
+
+    [SerializeField] int JumpingPower;
+
+    [SerializeField] float NbJump = 2;
 
     //All the movement Code
     void moving()
@@ -81,6 +86,7 @@ public class movement : MonoBehaviour
         if (Input.GetKey(KeyCode.A))
         {
             transform.Translate(-Speed * Time.deltaTime, 0, 0);
+            GetComponent<SpriteRenderer>().flipX = true;
         }
 
         //Physic Attack 
@@ -93,6 +99,7 @@ public class movement : MonoBehaviour
         if (Input.GetKey(KeyCode.D))
         {
             transform.Translate(Speed * Time.deltaTime, 0, 0);
+            GetComponent<SpriteRenderer>().flipX = false;
         }
     }
 }

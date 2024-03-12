@@ -4,8 +4,11 @@ using UnityEngine;
 
 public class MonsterDamage : MonoBehaviour
 {
-    public int damage;
-    public PlayerHealth playerHealth;
+
+
+    [SerializeField] public int damage;
+    [SerializeField] public PlayerHealth playerHealth;
+
 
     private void OnCollisionEnter2D(Collision2D other)
     {
