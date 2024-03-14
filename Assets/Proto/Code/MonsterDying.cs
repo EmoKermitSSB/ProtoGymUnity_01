@@ -4,24 +4,27 @@ using UnityEngine;
 
 public class MonsterDying : MonoBehaviour
 {
-    // Start is called before the first frame update
+
+    [SerializeField] public int Mo_maxHealth;
+    [SerializeField] public int Mo_health;
+
     void Start()
     {
-        
+        Mo_health = Mo_maxHealth;
     }
 
-    // Update is called once per frame
+
     void Update()
     {
 
     }
-    private void OnCollisionEnter2D(Collision2D other)
+
+    public void Mo_TakeDamage(int damage)
     {
-        if (other.gameObject.CompareTag("Hitbox"))
+        Mo_health -= damage;
+        if (Mo_health <= 0)
         {
             Destroy(gameObject);
-            Debug.Log("toucher");
         }
-    
     }
 }
