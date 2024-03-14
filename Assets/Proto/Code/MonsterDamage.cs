@@ -15,6 +15,7 @@ public class MonsterDamage : MonoBehaviour
         if (other.gameObject.CompareTag ("Player"))
         {
             playerHealth.TakeDamage(damage);
+
         }
     }
 }

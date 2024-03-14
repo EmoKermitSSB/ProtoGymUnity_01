@@ -69,7 +69,7 @@ public class movement : MonoBehaviour
 
     [SerializeField] int JumpingPower;
 
-    [SerializeField] float NbJump = 2;
+    //[SerializeField] float NbJump = 2;
 
     //All the movement Code
     void moving()
@@ -103,11 +103,12 @@ public class movement : MonoBehaviour
         }
     }
 }
-    
-       
-  
-       
-   
+
+
+
+
+
+
 
 
 
