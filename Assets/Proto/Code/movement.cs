@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using static UnityEditor.Searcher.SearcherWindow.Alignment;
+using static UnityEngine.Rendering.DebugUI;
 
 public class movement : MonoBehaviour
 {
@@ -10,11 +11,17 @@ public class movement : MonoBehaviour
 
     }
 
+    private void FixedUpdate()
+    {
+        moving();
+        Attack();
+    }
+
 
     void Update()
     {
         GroundCheck();
-        moving();
+        
     }
 
 
@@ -100,6 +107,30 @@ public class movement : MonoBehaviour
         {
             transform.Translate(Speed * Time.deltaTime, 0, 0);
             GetComponent<SpriteRenderer>().flipX = false;
+        }
+    }
+
+
+    [SerializeField] GameObject hitbox;
+
+    void Attack()
+    {
+        hitbox.SetActive(false);
+        if (Input.GetKey(KeyCode.DownArrow))
+        {
+            hitbox.SetActive(true);
+        }
+        else
+        {
+            hitbox.SetActive(false);
+        }
+
+    }
+    private void OnTriggerEnter2D(Collider2D other)
+    {
+        if (other.gameObject.CompareTag("Monster"))
+        {
+            Destroy(other.gameObject);
         }
     }
 }
