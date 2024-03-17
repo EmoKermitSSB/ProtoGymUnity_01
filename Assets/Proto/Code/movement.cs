@@ -83,6 +83,7 @@ public class movement : MonoBehaviour
     {
 
         //Jumping
+        //Jumping
         if (Input.GetKey(KeyCode.Space) && isGrounded /*|| NbJump > 0*/)
         {
             rb.velocity = new Vector2(rb.velocity.x, JumpingPower);
