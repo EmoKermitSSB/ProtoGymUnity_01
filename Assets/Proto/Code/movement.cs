@@ -117,7 +117,7 @@ public class movement : MonoBehaviour
     void Attack()
     {
         hitbox.SetActive(false);
-        if (Input.GetKey(KeyCode.DownArrow))
+        if (Input.GetKey(KeyCode.Keypad4))
         {
             hitbox.SetActive(true);
         }
