@@ -14,7 +14,6 @@ public class movement : MonoBehaviour
     private void FixedUpdate()
     {
         moving();
-        Attack();
     }
 
 
@@ -112,28 +111,7 @@ public class movement : MonoBehaviour
     }
 
 
-    [SerializeField] GameObject hitbox;
-
-    void Attack()
-    {
-        hitbox.SetActive(false);
-        if (Input.GetKey(KeyCode.Keypad4))
-        {
-            hitbox.SetActive(true);
-        }
-        else
-        {
-            hitbox.SetActive(false);
-        }
-
-    }
-    private void OnTriggerEnter2D(Collider2D other)
-    {
-        if (other.gameObject.CompareTag("Monster"))
-        {
-            Destroy(other.gameObject);
-        }
-    }
+    
 }
 
 

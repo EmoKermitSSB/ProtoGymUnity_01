@@ -33,6 +33,7 @@ public class PlayerHealth : MonoBehaviour
             if (health <= 0)
             {
                 Destroy(gameObject);
+                ScoreScript.scoreCount -= 1;
                 SceneManager.LoadScene("Gym");
 
             }
@@ -47,10 +48,10 @@ public class PlayerHealth : MonoBehaviour
             Destroy(Heart[2].gameObject);
         }
     }
-           
 
 
 
+    [SerializeField] public ScoreScript scoreScript;
 
 
 //TakeDamages in fonction of the monster with the code MonsterDamage
