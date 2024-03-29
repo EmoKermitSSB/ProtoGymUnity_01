@@ -34,7 +34,7 @@ public class PlayerHealth : MonoBehaviour
             {
                 Destroy(gameObject);
                 ScoreScript.scoreCount -= 1;
-                SceneManager.LoadScene("Gym");
+                SceneManager.LoadScene("Gym1");
 
             }
 

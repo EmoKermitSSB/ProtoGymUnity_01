@@ -5,22 +5,28 @@ using UnityEngine;
 public class PlayerDamage : MonoBehaviour
 {
 
-    [SerializeField] public int damage;
+    [SerializeField] public static int damage = 1;
 
     [SerializeField] GameObject hitbox;
 
     [SerializeField] MonsterDying monsterDying;
 
     [SerializeField] PlayerDamage playerDamage;
-    private void Update()
+
+    private void Start()
+    {
+        hitbox.SetActive(false);
+    }
+
+    private void FixedUpdate()
     {
         Attack();
     }
 
     void Attack()
     {
-        hitbox.SetActive(false);
-        if (Input.GetKeyUp(KeyCode.Keypad4))
+        
+        if (Input.GetKey(KeyCode.Keypad4))
         {
             hitbox.SetActive(true);
         }

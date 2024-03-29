@@ -1,7 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using static UnityEditor.Searcher.SearcherWindow.Alignment;
 using static UnityEngine.Rendering.DebugUI;
 
 public class movement : MonoBehaviour
@@ -67,7 +66,7 @@ public class movement : MonoBehaviour
 
 
 
-    [SerializeField] int Speed;
+    [SerializeField] public static int Speed = 10;
 
     [SerializeField] int DashSpeed;
 
