@@ -12,6 +12,10 @@ public class ShopControlScript : MonoBehaviour
 
     private int UpgradePrice = 25;
 
+    public static int MaxUpgrade1 = 0;
+    public static int MaxUpgrade2 = 0;
+    public static int MaxUpgrade3 = 0;
+
     public Text SoulAmountText;
     public Text UpgradePrice1;
     public Text UpgradePrice2;
@@ -61,21 +65,35 @@ public class ShopControlScript : MonoBehaviour
 
     public void BuyingDamage()
     {
-        PlayerDamage.damage += 1;
-        ScoreScript.scoreCount -= UpgradePrice;
+        if (MaxUpgrade1 != 4)
+        {
+            PlayerDamage.damage += 1;
+            Debug.Log(PlayerDamage.damage);
+            ScoreScript.scoreCount -= UpgradePrice;
+            MaxUpgrade1 += 1;
+        }
         
         
     }
     public void BuyingSpeed()
     {
-        movement.Speed += 1;
-        Debug.Log(movement.Speed);
-        ScoreScript.scoreCount -= UpgradePrice;
+        if (MaxUpgrade2 != 4)
+        {
+            movement.Speed += 1;
+            ScoreScript.scoreCount -= UpgradePrice;
+            MaxUpgrade2 += 1;
+        }
+         
         
     }
     public void BuyingSoul()
     {
-        ScoreScript.scoreCount -= UpgradePrice;
-        Debug.Log("+1");
+        if (MaxUpgrade3 != 4)
+        {
+            ScoreScript.SoulBoost += 1;
+            ScoreScript.scoreCount -= UpgradePrice;
+            MaxUpgrade3 += 1;
+        }
+        
     }
 }

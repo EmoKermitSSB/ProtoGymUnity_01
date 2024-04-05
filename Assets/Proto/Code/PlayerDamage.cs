@@ -30,6 +30,7 @@ public class PlayerDamage : MonoBehaviour
         {
             hitbox.SetActive(true);
         }
+        
         else
         {
             hitbox.SetActive(false);

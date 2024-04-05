@@ -436,7 +436,6 @@ MonoBehaviour:
   GroundLayer:
     serializedVersion: 2
     m_Bits: 64
-  Speed: 10
   DashSpeed: 10
   rb: {fileID: 490006907}
   JumpingPower: 20
@@ -452,7 +451,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: eb03e0887576ed547afc25183dd74185, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damage: 1
   hitbox: {fileID: 1547239245}
   monsterDying: {fileID: 0}
   playerDamage: {fileID: 490006904}
@@ -667,6 +665,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   scoreScript: {fileID: 446735733}
   playerDamage: {fileID: 490006904}
+  mov: {fileID: 0}
   SoulAmountText: {fileID: 446735731}
   UpgradePrice1: {fileID: 1737440583}
   UpgradePrice2: {fileID: 1569059298}
@@ -764,7 +763,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Soul + 1
+  m_text: SoulBoost + 1
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}

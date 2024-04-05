@@ -7,6 +7,7 @@ using UnityEngine.UI;
 
 public class ScoreScript : MonoBehaviour
 {
+    [SerializeField] public static int SoulBoost = 0;
     [SerializeField] public Text ScoreText;
     [SerializeField] public static float scoreCount;
 

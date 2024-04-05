@@ -24,7 +24,7 @@ public class MonsterDying : MonoBehaviour
         Mo_health -= damage;
         if (Mo_health <= 0)
         {
-            ScoreScript.scoreCount += 100;
+            ScoreScript.scoreCount += 100 + ScoreScript.SoulBoost;
             Destroy(gameObject);
         }
     }
