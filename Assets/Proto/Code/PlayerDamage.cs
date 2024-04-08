@@ -41,6 +41,7 @@ public class PlayerDamage : MonoBehaviour
     {
         if (other.gameObject.CompareTag("Monster"))
         {
+
             monsterDying.Mo_TakeDamage(damage);
         }
     }

@@ -5,6 +5,7 @@ using static UnityEngine.Rendering.DebugUI;
 
 public class movement : MonoBehaviour
 {
+    [SerializeField] SpriteRenderer spriteRenderer;
     void Start()
     {
 
