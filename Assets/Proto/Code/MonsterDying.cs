@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class MonsterDying : MonoBehaviour
 {
+    [SerializeField] public AudioManager audioManager;
     [SerializeField] public ScoreScript scoreScript;
     [SerializeField] public int Mo_maxHealth;
     [SerializeField] public int Mo_health;
@@ -24,6 +25,7 @@ public class MonsterDying : MonoBehaviour
         Mo_health -= damage;
         if (Mo_health <= 0)
         {
+            audioManager.PlaySFX(audioManager.DieE);
             ScoreScript.scoreCount += 100 + ScoreScript.SoulBoost;
             Destroy(gameObject);
         }
