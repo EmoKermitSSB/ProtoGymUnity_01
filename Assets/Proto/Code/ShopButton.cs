@@ -8,11 +8,13 @@ public class ShopButton : MonoBehaviour
     [SerializeField] public AudioManager audioManager;
     public void GoToShop()
     {
-        audioManager.PlaySFX(audioManager.SwitchMenu);
+        
         SceneManager.LoadScene("Shop");
+        audioManager.PlaySFX(audioManager.SwitchMenu);
     }
     public void ExitGame()
     {
         Application.Quit();
+
     }
 }

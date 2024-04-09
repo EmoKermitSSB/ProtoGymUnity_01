@@ -431,6 +431,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 53b9a3368b043444791011975d1bfd1b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  spriteRenderer: {fileID: 0}
   isGrounded: 0
   GroundCheckCollider: {fileID: 1950433426}
   GroundLayer:
@@ -665,7 +666,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   scoreScript: {fileID: 446735733}
   playerDamage: {fileID: 490006904}
-  mov: {fileID: 0}
+  mov: {fileID: 490006903}
   SoulAmountText: {fileID: 446735731}
   UpgradePrice1: {fileID: 1737440583}
   UpgradePrice2: {fileID: 1569059298}

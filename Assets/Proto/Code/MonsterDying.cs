@@ -25,9 +25,11 @@ public class MonsterDying : MonoBehaviour
         Mo_health -= damage;
         if (Mo_health <= 0)
         {
-            audioManager.PlaySFX(audioManager.DieE);
+            
             ScoreScript.scoreCount += 100 + ScoreScript.SoulBoost;
             Destroy(gameObject);
+            audioManager.PlaySFX(audioManager.DieE);
+            Debug.Log("Son");
         }
     }
 }
