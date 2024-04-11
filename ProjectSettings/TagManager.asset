@@ -9,11 +9,12 @@ TagManager:
   - Monster
   - GameMusic
   - Arrow
+  - TP
   layers:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - 
+  - TP
   - Water
   - UI
   - Ground
