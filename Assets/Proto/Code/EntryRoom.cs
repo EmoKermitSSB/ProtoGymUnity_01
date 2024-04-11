@@ -6,8 +6,9 @@ public class EntryRoom : MonoBehaviour
 {
     [SerializeField]public Transform PlayerPos;
     [SerializeField] public Transform TpPos;
+
     private void Awake()
     {
-        PlayerPos = TpPos;
+        GameObject.FindGameObjectsWithTag("Player").transform.position = transform.position;
     }
 }
