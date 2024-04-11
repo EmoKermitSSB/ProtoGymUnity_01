@@ -8,6 +8,7 @@ TagManager:
   - Hitbox
   - Monster
   - GameMusic
+  - Arrow
   layers:
   - Default
   - TransparentFX

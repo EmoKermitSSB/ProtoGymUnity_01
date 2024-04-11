@@ -73,7 +73,7 @@ public class movement : MonoBehaviour
 
     [SerializeField] private Rigidbody2D rb;
 
-    [SerializeField] int JumpingPower;
+    [SerializeField] public static float JumpingPower = 20f;
 
     //[SerializeField] float NbJump = 2;
 

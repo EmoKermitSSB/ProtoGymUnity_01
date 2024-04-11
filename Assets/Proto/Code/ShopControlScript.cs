@@ -15,15 +15,18 @@ public class ShopControlScript : MonoBehaviour
     public static int MaxUpgrade1 = 0;
     public static int MaxUpgrade2 = 0;
     public static int MaxUpgrade3 = 0;
+    public static int MaxUpgrade4 = 0;
 
     public Text SoulAmountText;
     public Text UpgradePrice1;
     public Text UpgradePrice2;
     public Text UpgradePrice3;
+    public Text UpgradePrice4;
 
     public Button buyButton1;
     public Button buyButton2;
     public Button buyButton3;
+    public Button buyButton4;
 
     // Use this for initialization
     void Start()
@@ -50,12 +53,18 @@ public class ShopControlScript : MonoBehaviour
             buyButton3.interactable = true;
         else
             buyButton3.interactable = false;
+
+        if (ScoreScript.scoreCount >= 25)
+            buyButton4.interactable = true;
+        else
+            buyButton4.interactable = false;
     }
     public void Prices()
     {
         UpgradePrice1.text = "25";
         UpgradePrice2.text = "25";
         UpgradePrice3.text = "25";
+        UpgradePrice4.text = "25";
     }
 
     public void exitShop()
@@ -95,5 +104,16 @@ public class ShopControlScript : MonoBehaviour
             MaxUpgrade3 += 1;
         }
         
+    }
+
+    public void BuyingJump()
+    {
+        if (MaxUpgrade4 != 4)
+        {
+            movement.JumpingPower += 1;
+            ScoreScript.scoreCount -= UpgradePrice;
+            MaxUpgrade4 += 1;
+        }
+
     }
 }

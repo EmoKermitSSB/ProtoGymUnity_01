@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ArrowThrowerDelayed: MonoBehaviour
+public class ArrowThrower: MonoBehaviour
 {
     public float Timer;
 
@@ -18,10 +18,10 @@ public class ArrowThrowerDelayed: MonoBehaviour
 
     void Start()
     {
-        Timer = 0.5f;
+        Timer = 2f;
         var bullet = Instantiate(bulletPrefab, bulletSpawnPoint.position, bulletSpawnPoint.rotation);
 
-        StartCoroutine(SpawnBullet(0.5f));
+        StartCoroutine(SpawnBullet(2));
     }
 
     IEnumerator SpawnBullet(float timer)

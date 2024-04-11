@@ -33,7 +33,7 @@ public class PlayerHealth : MonoBehaviour
             if (health <= 0)
             {
                 Destroy(gameObject);
-                ScoreScript.scoreCount -= 1;
+                ScoreScript.scoreCount -= 10;
                 SceneManager.LoadScene("Gym1");
 
             }
@@ -58,6 +58,20 @@ public class PlayerHealth : MonoBehaviour
 public void TakeDamage(int damage)
     {
         health -= damage;
+    }
+
+
+
+
+    public int ArrowDamage;
+
+    private void OnCollisionEnter2D(Collision2D other)
+    {
+        if (other.gameObject.CompareTag("Arrow"))
+        {
+            TakeDamage(ArrowDamage);
+            Destroy(other.gameObject);
+        }
     }
 }
 
