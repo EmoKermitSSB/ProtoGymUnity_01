@@ -6,6 +6,11 @@ using static UnityEngine.Rendering.DebugUI;
 public class movement : MonoBehaviour
 {
     [SerializeField] SpriteRenderer spriteRenderer;
+
+    private void Awake()
+    {
+        DontDestroyOnLoad(gameObject);
+    }
     void Start()
     {
 

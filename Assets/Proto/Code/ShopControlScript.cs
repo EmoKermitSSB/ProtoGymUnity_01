@@ -69,7 +69,8 @@ public class ShopControlScript : MonoBehaviour
 
     public void exitShop()
     {
-        SceneManager.LoadScene("Gym1");
+        GoNextRoom.RoomInd = 0;
+        SceneManager.LoadSceneAsync(GoNextRoom.RoomInd);
     }
 
     public void BuyingDamage()
