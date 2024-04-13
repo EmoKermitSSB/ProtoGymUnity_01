@@ -8,7 +8,7 @@ public class PlayerHealth : MonoBehaviour
 {
     void Start()
     {
-        health = maxHealth;
+
     }
     void Update()
     {
@@ -19,7 +19,6 @@ public class PlayerHealth : MonoBehaviour
 
 
     [SerializeField] public GameObject[] Heart;
-    [SerializeField] public int maxHealth;
     [SerializeField] public int health;
 
 

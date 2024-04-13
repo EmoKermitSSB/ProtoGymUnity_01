@@ -18,7 +18,7 @@ public class GoNextRoom : MonoBehaviour
         if (other.gameObject.CompareTag("Player"))
         {
             RoomInd = RoomInd + 1;
-            SceneManager.LoadSceneAsync(RoomInd);
+            SceneManager.LoadSceneAsync(GoNextRoom.RoomInd);
         }
     }
 }

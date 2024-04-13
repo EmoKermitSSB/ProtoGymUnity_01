@@ -4,11 +4,11 @@ using UnityEngine;
 
 public class EntryRoom : MonoBehaviour
 {
-    [SerializeField]public Transform PlayerPos;
-    [SerializeField] public Transform TpPos;
-
     private void Awake()
     {
-        GameObject.FindGameObjectsWithTag("Player").transform.position = transform.position;
+        if (gameObject.CompareTag("TP"))
+        {
+            GameObject.FindGameObjectWithTag("Player").transform.position = transform.position;
+        }
     }
 }
