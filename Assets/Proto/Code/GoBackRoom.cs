@@ -13,7 +13,7 @@ public class GoBackRoom : MonoBehaviour
         if (other.gameObject.CompareTag("Player"))
         {
             GoNextRoom.RoomInd = GoNextRoom.RoomInd - 1;
-            SceneManager.LoadSceneAsync(GoNextRoom.RoomInd);
+            SceneManager.LoadScene(GoNextRoom.RoomInd);
         }
     }
 }

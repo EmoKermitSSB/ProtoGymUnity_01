@@ -19,14 +19,14 @@ public class PlayerHealth : MonoBehaviour
 
 
     [SerializeField] public GameObject[] Heart;
-    [SerializeField] public int health;
+    [SerializeField] public int health ;
 
 
     //UI hearth and health system 
     public void UIHealth() {
         if (health < 1)
         {
-            Destroy(Heart[0].gameObject);
+            Heart[0].gameObject.SetActive(false);
 
 
             if (health <= 0)
@@ -40,11 +40,11 @@ public class PlayerHealth : MonoBehaviour
         }
         else if (health < 2)
         {
-            Destroy(Heart[1].gameObject);
+            Heart[1].gameObject.SetActive(false);
         }
         else if (health < 3)
         {
-            Destroy(Heart[2].gameObject);
+            Heart[2].gameObject.SetActive(false);
         }
     }
 

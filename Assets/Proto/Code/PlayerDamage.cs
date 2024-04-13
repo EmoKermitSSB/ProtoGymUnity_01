@@ -9,9 +9,9 @@ public class PlayerDamage : MonoBehaviour
 
     [SerializeField] GameObject hitbox;
 
-    [SerializeField] MonsterDying monsterDying;
+    [SerializeField] public MonsterDying monsterDying;
 
-    [SerializeField] PlayerDamage playerDamage;
+    [SerializeField]public PlayerDamage playerDamage;
 
     private void Start()
     {

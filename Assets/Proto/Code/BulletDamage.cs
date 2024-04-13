@@ -5,7 +5,7 @@ using UnityEngine;
 public class BulletDamage : MonoBehaviour
 {
     public int damage;
-    [SerializeField] public PlayerHealth playerHealth;
+    [SerializeField] public static  PlayerHealth playerHealth;
     private void OnCollisionEnter2D(Collision2D other)
     {
         if(other.gameObject.CompareTag("Player"))
