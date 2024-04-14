@@ -31,7 +31,7 @@ public class PlayerHealth : MonoBehaviour
 
             if (health <= 0)
             {
-                Destroy(gameObject);
+                gameObject.SetActive(false);
                 ScoreScript.scoreCount -= 10;
                 SceneManager.LoadScene(GoNextRoom.RoomInd);
 
@@ -69,7 +69,7 @@ public void TakeDamage(int damage)
         if (other.gameObject.CompareTag("Arrow"))
         {
             TakeDamage(ArrowDamage);
-            Destroy(other.gameObject);
+            other.gameObject.SetActive(false);
         }
     }
 }

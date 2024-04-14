@@ -27,7 +27,7 @@ public class MonsterDying : MonoBehaviour
         {
             
             ScoreScript.scoreCount += 100 + ScoreScript.SoulBoost;
-            Destroy(gameObject);
+            gameObject.SetActive(false);
             audioManager.PlaySFX(audioManager.DieE);
             Debug.Log("Son");
         }
