@@ -5,8 +5,7 @@ using UnityEngine;
 public class MonsterDamage : MonoBehaviour
 {
 
-
-    [SerializeField] public int damage;
+    [SerializeField] public EnemyData enemyData;
     [SerializeField] public PlayerHealth playerHealth;
     [SerializeField] public MonsterDying monsterDying;
 
@@ -14,7 +13,7 @@ public class MonsterDamage : MonoBehaviour
     {
         if (other.gameObject.CompareTag("Player"))
         {
-            playerHealth.TakeDamage(damage);
+            playerHealth.TakeDamage(EnemyData.damage);
         }
      
     }
