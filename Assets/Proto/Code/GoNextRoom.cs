@@ -6,7 +6,7 @@ using UnityEngine.SceneManagement;
 
 public class GoNextRoom : MonoBehaviour
 {
-    public static int RoomInd = 0;
+    public static int RoomInd = 1;
     public static int priority = 2;
     [SerializeField] CinemachineVirtualCamera vcam0;
     [SerializeField] CinemachineVirtualCamera vcam1;

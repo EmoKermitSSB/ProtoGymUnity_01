@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class MonsterDying : MonoBehaviour
 {
+
+    [SerializeField] public EnemyData EnemyData;
     [SerializeField] public AudioManager audioManager;
     [SerializeField] public ScoreScript scoreScript;
     [SerializeField] public int Mo_maxHealth;

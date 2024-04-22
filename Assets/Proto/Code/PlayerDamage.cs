@@ -11,8 +11,6 @@ public class PlayerDamage : MonoBehaviour
 
     [SerializeField] public MonsterDying monsterDying;
 
-    [SerializeField]public PlayerDamage playerDamage;
-
     private void Start()
     {
         hitbox.SetActive(false);
