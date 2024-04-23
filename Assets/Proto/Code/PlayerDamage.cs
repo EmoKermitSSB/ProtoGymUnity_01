@@ -9,8 +9,6 @@ public class PlayerDamage : MonoBehaviour
 
     [SerializeField] GameObject hitbox;
 
-    [SerializeField] public MonsterDying monsterDying;
-
     private void Start()
     {
         hitbox.SetActive(false);
@@ -37,10 +35,9 @@ public class PlayerDamage : MonoBehaviour
     }
     private void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.gameObject.CompareTag("Monster"))
+        if (other.gameObject.CompareTag("Monster")&& other.TryGetComponent(out MonsterDying monster))
         {
-
-            monsterDying.Mo_TakeDamage(damage);
+            monster.Mo_TakeDamage(damage);
         }
     }
 }

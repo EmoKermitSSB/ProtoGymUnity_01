@@ -1,13 +1,16 @@
 using Cinemachine;
 using System.Collections;
 using System.Collections.Generic;
+using UnityEditor;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
 public class GoNextRoom : MonoBehaviour
 {
-    public static int RoomInd = 1;
-    public static int priority = 2;
+    public static int RoomInd = 0;
+    public static int priority = 100;
+    [SerializeField] GameObject PLayer;
+    [SerializeField] GameObject Spawn;
     [SerializeField] CinemachineVirtualCamera vcam0;
     [SerializeField] CinemachineVirtualCamera vcam1;
     /*[SerializeField] CinemachineVirtualCamera vcam2;
@@ -23,8 +26,9 @@ public class GoNextRoom : MonoBehaviour
     {
         if (other.gameObject.CompareTag("Player"))
         {
+            PLayer.transform.position = Spawn.transform.position;
+            Debug.Log("Entrez");
             RoomInd = RoomInd + 1;
-            priority = priority + 1;
         }
     }
 
@@ -33,13 +37,13 @@ public class GoNextRoom : MonoBehaviour
         if (RoomInd == 0)
         {
 
-            vcam0.m_Priority = priority;
+            vcam0.Priority = priority + 1;
         }
 
         else if (RoomInd == 1)
         {
 
-            vcam1.m_Priority = priority;
+            vcam1.Priority = priority + 1;
         }
 
         /*else if (RoomInd == 2)
