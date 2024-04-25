@@ -22,7 +22,7 @@ public class PlayerHealth : MonoBehaviour
     [SerializeField] public int health ;
 
 
-    //UI hearth and health system 
+    //UI Coeur et System de vie 
     public void UIHealth() {
         if (health < 1)
         {
@@ -53,7 +53,7 @@ public class PlayerHealth : MonoBehaviour
     [SerializeField] public ScoreScript scoreScript;
 
 
-//TakeDamages in fonction of the monster with the code MonsterDamage
+//TakeDamage qui s'appelle quand le player doit subir des dégats 
 public void TakeDamage(int damage)
     {
         health -= damage;
@@ -62,8 +62,11 @@ public void TakeDamage(int damage)
 
 
 
+
+
     public int ArrowDamage;
 
+    //Collision qui sert a détecter si une fleche touche le player il subis des dégats
     private void OnCollisionEnter2D(Collision2D other)
     {
         if (other.gameObject.CompareTag("Arrow"))

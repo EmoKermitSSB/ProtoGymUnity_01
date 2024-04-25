@@ -20,6 +20,7 @@ public class ScoreScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        //incrémente la fonction de score 
         ScoreText.text = "" + Mathf.Round(scoreCount);
     }
 }

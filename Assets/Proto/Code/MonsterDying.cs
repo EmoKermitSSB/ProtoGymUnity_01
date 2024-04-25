@@ -5,14 +5,14 @@ using UnityEngine;
 public class MonsterDying : MonoBehaviour
 {
 
-    [SerializeField] public EnemyData EnemyData;
     [SerializeField] public AudioManager audioManager;
     [SerializeField] public ScoreScript scoreScript;
     [SerializeField] public int Mo_maxHealth;
-    [SerializeField] public int Mo_health;
+    [SerializeField] private int Mo_health;
 
     void Start()
     {
+        //Set les pv du player en fonction de ce qu'on a mis dans l'inspector
         Mo_health = Mo_maxHealth;
     }
 
@@ -22,6 +22,7 @@ public class MonsterDying : MonoBehaviour
 
     }
 
+    //Mo_TakeDamage permet au monstre de prendre des dégats
     public void Mo_TakeDamage(int damage)
     {
         Mo_health -= damage;
@@ -29,9 +30,13 @@ public class MonsterDying : MonoBehaviour
         {
             
             ScoreScript.scoreCount += 100 + ScoreScript.SoulBoost;
+
             gameObject.SetActive(false);
+
             audioManager.PlaySFX(audioManager.DieE);
+
             Debug.Log("Son");
+
         }
     }
 }

@@ -8,7 +8,6 @@ public class ArrowThrowerDelayed: MonoBehaviour
 
     public bool hasStarted;
 
-
     public Transform bulletSpawnPoint;
 
     public GameObject bulletPrefab;
@@ -16,9 +15,12 @@ public class ArrowThrowerDelayed: MonoBehaviour
     public float countdown = 1;
 
 
+
     void Start()
     {
         Timer = 0.5f;
+
+        
         var bullet = Instantiate(bulletPrefab, bulletSpawnPoint.position, bulletSpawnPoint.rotation);
 
         StartCoroutine(SpawnBullet(0.5f));
@@ -26,7 +28,7 @@ public class ArrowThrowerDelayed: MonoBehaviour
 
     IEnumerator SpawnBullet(float timer)
     {
-
+        //instantiation des fleches grace au prefab avec une coroutine pour cree un timing entre chaque fleche 
         yield return new WaitForSeconds(timer);
 
         var bullet = Instantiate(bulletPrefab, bulletSpawnPoint.position, bulletSpawnPoint.rotation);

@@ -26,7 +26,7 @@ public class ArrowThrower: MonoBehaviour
 
     IEnumerator SpawnBullet(float timer)
     {
-
+        //Meme code que pour le arrowthrower normal, le seul qui change c'est la variable pour la vitesse des fleches 
         yield return new WaitForSeconds(timer);
 
         var bullet = Instantiate(bulletPrefab, bulletSpawnPoint.position, bulletSpawnPoint.rotation);

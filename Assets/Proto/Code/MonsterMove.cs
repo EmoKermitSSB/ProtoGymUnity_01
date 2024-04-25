@@ -11,6 +11,7 @@ public class MonsterMove : MonoBehaviour
 
     void Start()
     {
+        //Réccupère le current point pour savoir le quel suivre 
         rb = GetComponent<Rigidbody2D>();
         currentPoint = P_A.transform;
     }
@@ -18,6 +19,7 @@ public class MonsterMove : MonoBehaviour
 
     void Update()
     {
+        // Execute la fonction si dessous 
         Patrolling();
     }
 
@@ -34,7 +36,7 @@ public class MonsterMove : MonoBehaviour
     [SerializeField] private Transform currentPoint;
 
 
-    //All the movement Code
+    //Fonction qui permet au monste de patroll et d'aller d'un point A a un point B 
     void Patrolling()
     {
         Vector2 point = currentPoint.position - transform.position;

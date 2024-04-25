@@ -17,12 +17,14 @@ public class DeathZone : MonoBehaviour
         
     }
 
+
+    //Fonction qui tue le joueur si il rentre dans le trigger renseigné
     private void OnTriggerEnter2D(Collider2D other)
     {
         if (other.gameObject.CompareTag("Player"))
         {
             Destroy(other.gameObject);
-            SceneManager.LoadScene("Gym1");
+            SceneManager.LoadScene("Room0");
         }
     }
 }

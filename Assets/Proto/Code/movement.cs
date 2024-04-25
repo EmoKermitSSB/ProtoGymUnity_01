@@ -25,7 +25,6 @@ public class movement : MonoBehaviour
     void Update()
     {
         GroundCheck();
-        
     }
 
 
@@ -36,7 +35,7 @@ public class movement : MonoBehaviour
     [SerializeField] const float GroundCheckRadius = 0.2f;
     [SerializeField] LayerMask GroundLayer;
 
-    //Ground Check who's detecting with a collider if the player is walking on the ground or flying
+    //Ground Check detecte si un collider est present sous les pied du player pour pouvoir l'empecher de sauter ou d'effectuer d'autre action temps qu'il n'est aps au sol 
     void GroundCheck()
     {
         isGrounded = false;
@@ -45,29 +44,6 @@ public class movement : MonoBehaviour
         if(colliders.Length > 0)
             isGrounded = true;
     }
-
-    /*Here for Checking if the ground is colliding with the player or no
-    void OnCollisionEnter2D(Collision2D other)
-    {
-        if (other.gameObject.CompareTag("World"))
-        { 
-            isGrounded = true;
-            //NbJump = 2;
-        }
-    }
-    void OnCollisionExit2D(Collision2D other)
-    {
-        if (other.gameObject.CompareTag("World"))
-        {
-            isGrounded = false;
-        }
-    }*/
-
-
-
-
-
-
 
 
 
@@ -82,11 +58,10 @@ public class movement : MonoBehaviour
 
     //[SerializeField] float NbJump = 2;
 
-    //All the movement Code
+    //Tous le code pour les mouvements 
     void moving()
     {
 
-        //Jumping
         //Jumping
         if (Input.GetKey(KeyCode.Space) && isGrounded /*|| NbJump > 0*/)
         {
@@ -99,12 +74,6 @@ public class movement : MonoBehaviour
         {
             transform.Translate(-Speed * Time.deltaTime, 0, 0);
             GetComponent<SpriteRenderer>().flipX = true;
-        }
-
-        //Physic Attack 
-        if (Input.GetKey(KeyCode.Keypad6))
-        {
-            
         }
 
         //Move Right
