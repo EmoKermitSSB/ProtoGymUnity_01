@@ -5,6 +5,8 @@ using UnityEngine.SceneManagement;
 
 public class DeathZone : MonoBehaviour
 {
+    private int damage=3;
+    [SerializeField] PlayerHealth playerHealth;
     // Start is called before the first frame update
     void Start()
     {
@@ -23,8 +25,9 @@ public class DeathZone : MonoBehaviour
     {
         if (other.gameObject.CompareTag("Player"))
         {
-            Destroy(other.gameObject);
-            SceneManager.LoadScene("Room0");
+            playerHealth.TakeDamage(damage);
+            
+            
         }
     }
 }

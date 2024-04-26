@@ -13,6 +13,7 @@ public class PlayerHealth : MonoBehaviour
     void Update()
     {
         UIHealth();
+        RoomSpawning();
     }
 
 
@@ -30,14 +31,12 @@ public class PlayerHealth : MonoBehaviour
     [SerializeField] GameObject SpawnDeath5;
 
 
-    [SerializeField] GameObject Player;
-    [SerializeField] GameObject RoomSpawn;
+    [SerializeField]public GameObject Player;
+    [SerializeField]public GameObject RoomSpawn;
 
     //UI Coeur et System de vie 
     public void UIHealth() {
-        if (health != 0)
-        {
-            Player.gameObject.SetActive(true);
+        
             if (health < 1)
             {
                 Heart[0].gameObject.SetActive(false);
@@ -47,13 +46,17 @@ public class PlayerHealth : MonoBehaviour
                 {
                     gameObject.SetActive(false);
                     ScoreScript.scoreCount -= 10;
-                    SceneManager.LoadScene(GoNextRoom.RoomInd);
                     Player.transform.position = RoomSpawn.transform.position;
                     health = 3;
 
+                    Heart[1].gameObject.SetActive(true);
+                    Heart[2].gameObject.SetActive(true);
+                    Heart[0].gameObject.SetActive(true);
+                    Player.gameObject.SetActive(true) ;
+
                 }
 
-            }
+            
             else if (health < 2)
             {
                 Heart[1].gameObject.SetActive(false);

@@ -19,8 +19,8 @@ public class GoNextRoom : MonoBehaviour
     // Les différentes camera 
     [SerializeField] CinemachineVirtualCamera vcam0;
     [SerializeField] CinemachineVirtualCamera vcam1;
-    /*[SerializeField] CinemachineVirtualCamera vcam2;
-    [SerializeField] CinemachineVirtualCamera vcam3;*/
+    [SerializeField] CinemachineVirtualCamera vcam2;
+    [SerializeField] CinemachineVirtualCamera vcam3;
 
 
     void Update()
@@ -56,17 +56,17 @@ public class GoNextRoom : MonoBehaviour
             vcam1.Priority = priority + 1;
         }
 
-        /*else if (RoomInd == 2)
+        else if (RoomInd == 2)
         {
 
-            vcam2.m_Priority = priority;
+            vcam2.Priority = priority + 1;
         }
 
         else if (RoomInd == 3)
         {
 
-            vcam3.m_Priority = priority;
-        }*/
+            vcam3.Priority = priority + 1;
+        }
     }
 
 
