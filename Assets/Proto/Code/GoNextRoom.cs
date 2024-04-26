@@ -37,6 +37,7 @@ public class GoNextRoom : MonoBehaviour
             PLayer.transform.position = Spawn.transform.position;
             Debug.Log("Entrez");
             RoomInd = RoomInd + 1;
+            
         }
     }
 
