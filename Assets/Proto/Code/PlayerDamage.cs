@@ -7,12 +7,19 @@ public class PlayerDamage : MonoBehaviour
 
     [SerializeField] public static int damage = 1;
 
-    [SerializeField] GameObject hitbox;
+    [SerializeField] GameObject hitboxfront;
+    [SerializeField] GameObject hitboxback;
+    [SerializeField] Rigidbody2D _rigibody;
+
+
+    public bool hitboxRight = false;
+    public bool hitboxLeft = false;
 
     private void Start()
     {
         //laisse la hitbox désactiver pour l'activer dans la fonction
-        hitbox.SetActive(false);
+        hitboxfront.SetActive(false);
+        hitboxback.SetActive(false);
     }
 
     private void FixedUpdate()
@@ -23,16 +30,34 @@ public class PlayerDamage : MonoBehaviour
     // Attack permet au player de lancer une attaque grace a une hitbox, attack et appeler dans un fixedUpdate pour éviter que la hitbox reste trop longtemps active
     void Attack()
     {
-        
-        if (Input.GetKey(KeyCode.Keypad4))
+
+        if (_rigibody.velocity.x < -0.01 && hitboxRight == true)
         {
-            hitbox.SetActive(true);
+            if (Input.GetKey(KeyCode.Keypad4))
+            {
+                hitboxfront.SetActive(true);
+            }
+
+            else
+            {
+                hitboxfront.SetActive(false);
+                hitboxRight = false;
+            }
         }
-        
-        else
+        if (_rigibody.velocity.x < +0.01 && hitboxLeft == true)
         {
-            hitbox.SetActive(false);
+            if (Input.GetKey(KeyCode.Keypad4))
+            {
+                hitboxback.SetActive(true);
+            }
+
+            else
+            {
+                hitboxback.SetActive(false);
+                hitboxLeft = false;
+            }
         }
+
 
     }
 

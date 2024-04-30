@@ -56,12 +56,14 @@ public class movement : MonoBehaviour
 
     [SerializeField] public static float JumpingPower = 20f;
 
+    [SerializeField] PlayerDamage Playerdamage;
+
     //[SerializeField] float NbJump = 2;
 
     //Tous le code pour les mouvements 
     void moving()
     {
-
+        
         //Jumping
         if (Input.GetKey(KeyCode.Space) && isGrounded /*|| NbJump > 0*/)
         {
@@ -74,6 +76,7 @@ public class movement : MonoBehaviour
         {
             transform.Translate(-Speed * Time.deltaTime, 0, 0);
             GetComponent<SpriteRenderer>().flipX = true;
+            
         }
 
         //Move Right
@@ -81,7 +84,25 @@ public class movement : MonoBehaviour
         {
             transform.Translate(Speed * Time.deltaTime, 0, 0);
             GetComponent<SpriteRenderer>().flipX = false;
+            
         }
+
+
+
+        
+        
+
+        /*if (GetComponent<SpriteRenderer>().flipX == false)
+        {
+            Playerdamage.hitboxLeft = true;
+        }
+        Playerdamage.hitboxLeft = false;
+
+        if (GetComponent<SpriteRenderer>().flipX == true)
+        {
+            Playerdamage.hitboxLeft = true;
+        }
+        Playerdamage.hitboxRight = false;*/
     }
 
 
