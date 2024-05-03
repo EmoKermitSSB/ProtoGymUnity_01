@@ -36,37 +36,43 @@ public class PlayerHealth : MonoBehaviour
 
     //UI Coeur et System de vie 
     public void UIHealth() {
-        
-            if (health < 1)
-            {
-                Heart[0].gameObject.SetActive(false);
 
+        if (health < 1)
+        {
+            Heart[0].gameObject.SetActive(false);
 
-                if (health <= 0)
-                {
-                    gameObject.SetActive(false);
-                    ScoreScript.scoreCount -= 10;
-                    Player.transform.position = RoomSpawn.transform.position;
-                    health = 3;
-
-                    Heart[1].gameObject.SetActive(true);
-                    Heart[2].gameObject.SetActive(true);
-                    Heart[0].gameObject.SetActive(true);
-                    Player.gameObject.SetActive(true) ;
-
-                }
-
-            
-            else if (health < 2)
-            {
-                Heart[1].gameObject.SetActive(false);
-            }
-            else if (health < 3)
-            {
-                Heart[2].gameObject.SetActive(false);
-            }
         }
-    }
+
+        if (health < 2)
+        {
+            Heart[1].gameObject.SetActive(false);
+        }
+
+
+        if (health < 3)
+        {
+            Heart[2].gameObject.SetActive(false);
+        }
+        
+        
+
+        
+
+        if(health <= 0)
+        {
+            gameObject.SetActive(false);
+            ScoreScript.scoreCount -= 10;
+            Player.transform.position = RoomSpawn.transform.position;
+
+            health = 3;
+            Heart[1].gameObject.SetActive(true);
+            Heart[2].gameObject.SetActive(true);
+            Heart[0].gameObject.SetActive(true);
+            Player.gameObject.SetActive(true);
+
+
+        }
+}
         
 
 

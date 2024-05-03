@@ -99,7 +99,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ArrowSpeed: 5
-  life: 10
+  life: 2
 --- !u!61 &8029371227214551933
 BoxCollider2D:
   m_ObjectHideFlags: 0
