@@ -31,7 +31,42 @@ public class PlayerDamage : MonoBehaviour
     void Attack()
     {
 
-        if (_rigibody.velocity.x < -0.01 && hitboxRight == true)
+        /*if (_rigibody.velocity.x > 0.01)
+        {
+            Debug.Log("Droite");
+            if (Input.GetKey(KeyCode.Keypad4))
+            {
+                hitboxfront.SetActive(true);
+            }
+
+            else
+            {
+                hitboxfront.SetActive(false);
+                hitboxRight = false;
+            }
+        }
+        if (_rigibody.velocity.x < -0.01)
+        {
+            Debug.Log("Gauche");
+            if (Input.GetKey(KeyCode.Keypad4))
+            {
+                hitboxback.SetActive(true);
+            }
+
+            else
+            {
+                hitboxback.SetActive(false);
+                hitboxLeft = false;
+            }
+        }*/
+
+
+
+
+
+
+
+        if (GetComponent<SpriteRenderer>().flipX == false)
         {
             if (Input.GetKey(KeyCode.Keypad4))
             {
@@ -44,7 +79,9 @@ public class PlayerDamage : MonoBehaviour
                 hitboxRight = false;
             }
         }
-        if (_rigibody.velocity.x < +0.01 && hitboxLeft == true)
+        
+
+        if (GetComponent<SpriteRenderer>().flipX == true)
         {
             if (Input.GetKey(KeyCode.Keypad4))
             {
@@ -57,7 +94,7 @@ public class PlayerDamage : MonoBehaviour
                 hitboxLeft = false;
             }
         }
-
+        
 
     }
 

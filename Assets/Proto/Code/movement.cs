@@ -92,17 +92,7 @@ public class movement : MonoBehaviour
         
         
 
-        /*if (GetComponent<SpriteRenderer>().flipX == false)
-        {
-            Playerdamage.hitboxLeft = true;
-        }
-        Playerdamage.hitboxLeft = false;
-
-        if (GetComponent<SpriteRenderer>().flipX == true)
-        {
-            Playerdamage.hitboxLeft = true;
-        }
-        Playerdamage.hitboxRight = false;*/
+        
     }
 
 
