@@ -65,10 +65,9 @@ public class movement : MonoBehaviour
     {
         
         //Jumping
-        if (Input.GetKey(KeyCode.Space) && isGrounded /*|| NbJump > 0*/)
+        if (Input.GetKey(KeyCode.Space) && isGrounded)
         {
             rb.velocity = new Vector2(rb.velocity.x, JumpingPower);
-            //NbJump = NbJump - 1;
         }
 
         //Move Left
