@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -10,6 +11,7 @@ public class PlayerDamage : MonoBehaviour
     [SerializeField] GameObject hitboxfront;
     [SerializeField] GameObject hitboxback;
     [SerializeField] Rigidbody2D _rigibody;
+    
 
 
     public bool hitboxRight = false;
@@ -106,6 +108,17 @@ public class PlayerDamage : MonoBehaviour
         if (other.gameObject.CompareTag("Monster")&& other.TryGetComponent(out MonsterDying monster))
         {
             monster.Mo_TakeDamage(damage);
+
+            if (GetComponent<SpriteRenderer>().flipX == false)
+            {
+                other.gameObject.transform.Translate(2, 0, 0);
+            }
+
+            if (GetComponent<SpriteRenderer>().flipX == true)
+            {
+                other.gameObject.transform.Translate(-2, 0, 0);
+            }
+
         }
     }
 }

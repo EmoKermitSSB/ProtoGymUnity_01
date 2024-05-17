@@ -731,7 +731,9 @@ PrefabInstance:
       value: ========= ROOM 7 =========
       objectReference: {fileID: 0}
     m_RemovedComponents: []
-    m_RemovedGameObjects: []
+    m_RemovedGameObjects:
+    - {fileID: 1501733502455637174, guid: f4c04fced4f2c5948891d797da7e03aa, type: 3}
+    - {fileID: 7203286099365066243, guid: f4c04fced4f2c5948891d797da7e03aa, type: 3}
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f4c04fced4f2c5948891d797da7e03aa, type: 3}
