@@ -31,14 +31,11 @@ public class ProceduralManager : MonoBehaviour
     {
         while (Count < 5)
         {
-            Debug.Log(RandNum);
             RandNum = Random.Range(0, array.Length);
             var Room = Instantiate(array[RandNum], spawnroom.transform.position, spawnroom.transform.rotation);
-            Debug.Log(RandNum);
 
             Count++;
-            spawnroom.transform.Translate(40, 0, 0);
-            Debug.Log(Count);
+            spawnroom.transform.Translate(30, 0, 0);
 
         }
             

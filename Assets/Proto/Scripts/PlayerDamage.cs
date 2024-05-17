@@ -111,12 +111,12 @@ public class PlayerDamage : MonoBehaviour
 
             if (GetComponent<SpriteRenderer>().flipX == false)
             {
-                other.gameObject.transform.Translate(2, 0, 0);
+                other.gameObject.transform.Translate(1, 0, 0);
             }
 
             if (GetComponent<SpriteRenderer>().flipX == true)
             {
-                other.gameObject.transform.Translate(-2, 0, 0);
+                other.gameObject.transform.Translate(-1, 0, 0);
             }
 
         }
