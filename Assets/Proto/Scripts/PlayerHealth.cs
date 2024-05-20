@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
@@ -13,25 +14,19 @@ public class PlayerHealth : MonoBehaviour
     void Update()
     {
         UIHealth();
-        RoomSpawning();
     }
 
 
 
 
-    [SerializeField] public GameObject[] Heart;
-    [SerializeField] public int health ;
+    [SerializeField] GameObject[] Heart;
+    [SerializeField] int health ;
+
+    [SerializeField] GoNextRoom goNextRoom;
+    [SerializeField] GameObject Spawn;
 
 
-    [SerializeField] GameObject SpawnDeath0;
-    [SerializeField] GameObject SpawnDeath1;
-    [SerializeField] GameObject SpawnDeath2;
-    [SerializeField] GameObject SpawnDeath3;
-    [SerializeField] GameObject SpawnDeath4;
-    [SerializeField] GameObject SpawnDeath5;
-
-
-    [SerializeField]public GameObject Player;
+    [SerializeField] GameObject Player;
     [SerializeField]public GameObject RoomSpawn;
 
     //UI Coeur et System de vie 
@@ -62,7 +57,8 @@ public class PlayerHealth : MonoBehaviour
         {
             gameObject.SetActive(false);
             ScoreScript.scoreCount -= 10;
-            Player.transform.position = RoomSpawn.transform.position;
+            Spawn = GameObject.FindGameObjectWithTag("Spawn");
+            Player.transform.position = Spawn.transform.position;
 
             health = 3;
             Heart[1].gameObject.SetActive(true);
@@ -104,38 +100,5 @@ public void TakeDamage(int damage)
     }
 
 
-    public void RoomSpawning()
-    {
-        if (GoNextRoom.RoomInd == 0)
-        {
-            RoomSpawn = SpawnDeath0;
-        }
-
-        if (GoNextRoom.RoomInd == 1)
-        {
-            RoomSpawn = SpawnDeath1;
-        }
-
-        if (GoNextRoom.RoomInd == 2)
-        {
-            RoomSpawn = SpawnDeath2;
-        }
-
-        if (GoNextRoom.RoomInd == 3)
-        {
-            RoomSpawn = SpawnDeath3;
-        }
-
-        if (GoNextRoom.RoomInd == 4)
-        {
-            RoomSpawn = SpawnDeath4;
-        }
-
-        if (GoNextRoom.RoomInd == 5)
-        {
-            RoomSpawn = SpawnDeath5;
-        }
-
-    }
 }
 

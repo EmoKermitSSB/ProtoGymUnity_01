@@ -1,4 +1,5 @@
 using Cinemachine;
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEditor;
@@ -11,10 +12,13 @@ public class GoNextRoom : MonoBehaviour
     //Les index avec le switch de priority 
     public static int RoomInd = 0;
     public static int priority = 100;
+    [SerializeField] PlayerHealth playerHealth;
+    [SerializeField] GameObject Player;
+    [SerializeField] public GameObject Spawn;
+    [SerializeField] GameObject Cam;
 
     //Les Gameobject qui permettent de bien se mettre dans la scène
-    [SerializeField] GameObject PLayer;
-    [SerializeField] GameObject Spawn;
+    /*
 
     // Les différentes camera 
     [SerializeField] CinemachineVirtualCamera vcam0;
@@ -29,20 +33,8 @@ public class GoNextRoom : MonoBehaviour
         VerifRoom();
     }
 
-    //Si le player rentre dans le trigger alors il se Tp sur le Gameobject spawn qui est a l'entré de la salle et augmente l'indice d'index 
-    private void OnTriggerEnter2D(Collider2D other)
-    {
-        if (other.gameObject.CompareTag("Player"))
-        {
-            PLayer.transform.position = Spawn.transform.position;
-            Debug.Log("Entrez");
-            RoomInd = RoomInd + 1;
-            
-        }
-    }
-
     //Fonction qui permet d'augementer la priority des cams en fonction de l'index de la room
-    private void VerifRoom()
+    /*private void VerifRoom()
     {
         if (RoomInd == 0)
         {
@@ -67,13 +59,35 @@ public class GoNextRoom : MonoBehaviour
 
             vcam3.Priority = priority + 1;
         }
+    }*/
+
+    //Si le player rentre dans le trigger alors il se Tp sur le Gameobject spawn qui est a l'entré de la salle et augmente l'indice d'index 
+    private void OnTriggerEnter2D(Collider2D other)
+    {
+        if (other.gameObject.CompareTag("Player"))
+        {
+            Spawn = GameObject.FindGameObjectWithTag("Spawn");
+            Spawn.transform.Translate(30, 0, 0);
+
+            Spawn = GameObject.FindGameObjectWithTag("Spawn");
+            Player = GameObject.FindGameObjectWithTag("Player");
+            Player.transform.position = Spawn.transform.position;
+
+            Cam = GameObject.FindGameObjectWithTag("Cam");
+            Cam.transform.Translate(30, 0, 0);
+
+            Debug.Log("Entrez");
+            RoomInd = RoomInd + 1;
+
+        }
     }
 
 
-
-    //A la exit du trigger le collider du trigger devien false ce qui permet de ne pas laisser passer le player 
-    private void OnTriggerExit2D(Collider2D other)
+        //A la exit du trigger le collider du trigger devient false ce qui permet de ne pas laisser passer le player 
+        private void OnTriggerExit2D(Collider2D other)
     {
         this.gameObject.GetComponent<BoxCollider2D>().isTrigger = false;
+        
+        
     }
 }

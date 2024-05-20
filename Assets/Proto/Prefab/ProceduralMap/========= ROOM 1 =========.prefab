@@ -68,37 +68,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 3121311951866034057}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &3003211510454435603
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 2292014766952317435}
-  m_Layer: 0
-  m_Name: Spawn2
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &2292014766952317435
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3003211510454435603}
-  serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 1.8, y: -0.28, z: 0}
-  m_LocalScale: {x: 0.34438, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 2395220884671395782}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &3185083406331052783
 GameObject:
   m_ObjectHideFlags: 0
@@ -1175,7 +1144,7 @@ GameObject:
   - component: {fileID: 4335481514243733619}
   - component: {fileID: 5623442501833942167}
   m_Layer: 0
-  m_Name: Trigger2
+  m_Name: Trigger1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1193,8 +1162,7 @@ Transform:
   m_LocalPosition: {x: 19.56, y: 1.0276008, z: -0.09638977}
   m_LocalScale: {x: 1, y: 7.3, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children:
-  - {fileID: 2292014766952317435}
+  m_Children: []
   m_Father: {fileID: 2142962357638079390}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &4756294143945209800
@@ -1306,12 +1274,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1fd9976893f618947a62f32d46a31a47, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  PLayer: {fileID: 0}
-  Spawn: {fileID: 3003211510454435603}
-  vcam0: {fileID: 0}
-  vcam1: {fileID: 7402876915963084486}
-  vcam2: {fileID: 0}
-  vcam3: {fileID: 0}
+  playerHealth: {fileID: 0}
 --- !u!1 &7042405484581436837
 GameObject:
   m_ObjectHideFlags: 0
