@@ -74,7 +74,7 @@ public class GoNextRoom : MonoBehaviour
             Player.transform.position = Spawn.transform.position;
 
             Cam = GameObject.FindGameObjectWithTag("Cam");
-            Cam.transform.Translate(30, 0, 0);
+            Cam.transform.Translate(30.4f, 0, 0);
 
             Debug.Log("Entrez");
             RoomInd = RoomInd + 1;
