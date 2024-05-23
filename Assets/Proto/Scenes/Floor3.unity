@@ -840,6 +840,7 @@ MonoBehaviour:
   damage: 1
   playerHealth: {fileID: 1040671889}
   monsterDying: {fileID: 270505948}
+  player: {fileID: 0}
 --- !u!114 &270505947
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -872,7 +873,11 @@ MonoBehaviour:
   audioManager: {fileID: 707290831}
   scoreScript: {fileID: 1691029662}
   Mo_maxHealth: 3
+  FloorSoul: 0
+  FloorCount: 0
   Mo_health: 0
+  music: {fileID: 0}
+  Score: {fileID: 0}
 --- !u!212 &270505949
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -1059,6 +1064,50 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 299391057}
   m_CullTransparentMesh: 1
+--- !u!1 &341411946
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 341411948}
+  - component: {fileID: 341411947}
+  m_Layer: 0
+  m_Name: GameManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &341411947
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 341411946}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 94d54ab6e98ecaf4482b83e9f4efc59c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!4 &341411948
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 341411946}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 43.722607, y: 46.294296, z: 0.11361705}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &567901093
 GameObject:
   m_ObjectHideFlags: 0
@@ -3343,6 +3392,7 @@ MonoBehaviour:
   damage: 1
   playerHealth: {fileID: 1040671889}
   monsterDying: {fileID: 1772939136}
+  player: {fileID: 0}
 --- !u!114 &1772939135
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3375,7 +3425,11 @@ MonoBehaviour:
   audioManager: {fileID: 707290831}
   scoreScript: {fileID: 1691029662}
   Mo_maxHealth: 3
+  FloorSoul: 0
+  FloorCount: 0
   Mo_health: 0
+  music: {fileID: 0}
+  Score: {fileID: 0}
 --- !u!212 &1772939137
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -3821,3 +3875,4 @@ SceneRoots:
   - {fileID: 1040671895}
   - {fileID: 1258346009}
   - {fileID: 210916770}
+  - {fileID: 341411948}
