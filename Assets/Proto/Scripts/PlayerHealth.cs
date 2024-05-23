@@ -56,7 +56,7 @@ public class PlayerHealth : MonoBehaviour
         if(health <= 0)
         {
             gameObject.SetActive(false);
-            ScoreScript.scoreCount -= 10;
+            ScoreScript.scoreCount -= 5;
             Spawn = GameObject.FindGameObjectWithTag("Spawn");
             Player.transform.position = Spawn.transform.position;
 
