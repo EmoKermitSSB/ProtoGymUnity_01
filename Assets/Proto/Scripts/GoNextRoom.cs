@@ -16,6 +16,7 @@ public class GoNextRoom : MonoBehaviour
     [SerializeField] GameObject Player;
     [SerializeField] public GameObject Spawn;
     [SerializeField] GameObject Cam;
+    [SerializeField] movement move;
 
     //Les Gameobject qui permettent de bien se mettre dans la scène
     /*
@@ -66,6 +67,10 @@ public class GoNextRoom : MonoBehaviour
     {
         if (other.gameObject.CompareTag("Player"))
         {
+
+            Player = GameObject.FindGameObjectWithTag("Player");
+            move = Player.GetComponent<movement>();
+
             Spawn = GameObject.FindGameObjectWithTag("Spawn");
             Spawn.transform.Translate(30, 0, 0);
 
@@ -76,10 +81,12 @@ public class GoNextRoom : MonoBehaviour
             Cam = GameObject.FindGameObjectWithTag("Cam");
             Cam.transform.Translate(30.4f, 0, 0);
 
+            StartCoroutine (StartRoom());
             Debug.Log("Entrez");
             RoomInd = RoomInd + 1;
 
         }
+        
     }
 
 
@@ -89,5 +96,14 @@ public class GoNextRoom : MonoBehaviour
         this.gameObject.GetComponent<BoxCollider2D>().isTrigger = false;
         
         
+    }
+
+    IEnumerator StartRoom()
+    {
+        Debug.Log("Salam");
+        move.CanMoov = false;
+        yield return new WaitForSeconds(2f);
+
+        move.CanMoov = true;
     }
 }

@@ -6,6 +6,7 @@ using static UnityEngine.Rendering.DebugUI;
 public class movement : MonoBehaviour
 {
     [SerializeField] SpriteRenderer spriteRenderer;
+    public bool CanMoov = true;
 
     private void Awake()
     {
@@ -18,7 +19,11 @@ public class movement : MonoBehaviour
 
     private void FixedUpdate()
     {
-        moving();
+        if (CanMoov == true)
+        {
+            moving();
+        }
+        
     }
 
 
