@@ -41,7 +41,7 @@ public class MonsterDying : MonoBehaviour
             ScoreScript.scoreCount += FloorSoul + ScoreScript.SoulBoost;
 
             gameObject.SetActive(false);
-            audioManager = (AudioManager)music.GetComponent<AudioManager>();
+            audioManager = music.GetComponent<AudioManager>();
             audioManager.PlaySFX(audioManager.DieE);
 
             Debug.Log("Son");
