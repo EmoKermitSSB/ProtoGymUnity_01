@@ -1533,7 +1533,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 0
+  m_Constraints: 4
 --- !u!61 &16577858364864965
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -1750,19 +1750,19 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1259008794891124030, guid: 59d771b10068cbb40b6b08b4e6f38286, type: 3}
       propertyPath: m_LocalBounds.m_Center.x
-      value: -0.00034999847
+      value: -0.0024999976
       objectReference: {fileID: 0}
     - target: {fileID: 1259008794891124030, guid: 59d771b10068cbb40b6b08b4e6f38286, type: 3}
       propertyPath: m_LocalBounds.m_Center.y
-      value: -0.0020999908
+      value: 0.00014999509
       objectReference: {fileID: 0}
     - target: {fileID: 1259008794891124030, guid: 59d771b10068cbb40b6b08b4e6f38286, type: 3}
       propertyPath: m_LocalBounds.m_Extent.x
-      value: 0.50805
+      value: 0.5025
       objectReference: {fileID: 0}
     - target: {fileID: 1259008794891124030, guid: 59d771b10068cbb40b6b08b4e6f38286, type: 3}
       propertyPath: m_LocalBounds.m_Extent.y
-      value: 0.5051
+      value: 0.50455
       objectReference: {fileID: 0}
     - target: {fileID: 2532974924639116664, guid: 59d771b10068cbb40b6b08b4e6f38286, type: 3}
       propertyPath: m_LocalScale.x
@@ -2302,19 +2302,19 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1259008794891124030, guid: 59d771b10068cbb40b6b08b4e6f38286, type: 3}
       propertyPath: m_LocalBounds.m_Center.x
-      value: 0.00044998527
+      value: -0.00034999847
       objectReference: {fileID: 0}
     - target: {fileID: 1259008794891124030, guid: 59d771b10068cbb40b6b08b4e6f38286, type: 3}
       propertyPath: m_LocalBounds.m_Center.y
-      value: 0.004400015
+      value: -0.0021499991
       objectReference: {fileID: 0}
     - target: {fileID: 1259008794891124030, guid: 59d771b10068cbb40b6b08b4e6f38286, type: 3}
       propertyPath: m_LocalBounds.m_Extent.x
-      value: 0.50525
+      value: 0.50075
       objectReference: {fileID: 0}
     - target: {fileID: 1259008794891124030, guid: 59d771b10068cbb40b6b08b4e6f38286, type: 3}
       propertyPath: m_LocalBounds.m_Extent.y
-      value: 0.5044
+      value: 0.50695
       objectReference: {fileID: 0}
     - target: {fileID: 2532974924639116664, guid: 59d771b10068cbb40b6b08b4e6f38286, type: 3}
       propertyPath: m_LocalScale.x

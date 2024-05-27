@@ -17,27 +17,26 @@ public class movement : MonoBehaviour
 
     }
 
-    private void FixedUpdate()
+
+    void Update()
     {
         if (CanMoov == true)
         {
             moving();
         }
-        
-    }
 
-
-    void Update()
-    {
         GroundCheck();
     }
 
 
-
+    //---------------------------------GROUNDCHECK----------------------------------------------//
 
     [SerializeField] bool isGrounded = false;
+
     [SerializeField] Transform GroundCheckCollider;
+
     [SerializeField] const float GroundCheckRadius = 0.2f;
+
     [SerializeField] LayerMask GroundLayer;
 
     //Ground Check detecte si un collider est present sous les pied du player pour pouvoir l'empecher de sauter ou d'effectuer d'autre action temps qu'il n'est aps au sol 
@@ -53,29 +52,55 @@ public class movement : MonoBehaviour
 
 
 
-    [SerializeField] public static int Speed = 10;
 
-    [SerializeField] int DashSpeed;
 
-    [SerializeField] private Rigidbody2D rb;
 
-    [SerializeField] public static float JumpingPower = 20f;
 
+
+    //---------------------------------MOVEMENT----------------------------------------------//
+
+    [SerializeField]public static int Speed = 1000;
+
+    [SerializeField] public Rigidbody2D rb;
+
+    [SerializeField] public RigidbodyConstraints2D rbcon;
+
+    [SerializeField] public static float JumpingPower = 21.5f;
+     
     [SerializeField] PlayerDamage Playerdamage;
 
-    //[SerializeField] float NbJump = 2;
+    [SerializeField] public float XAxis;
 
-    //Tous le code pour les mouvements 
+    
     void moving()
     {
         
+        XAxis = Input.GetAxis("Horizontal");
+        
+
+        //Move Left
+        rb.velocity = new Vector2(Speed * -XAxis * Time.deltaTime, rb.velocity.y);
+        GetComponent<SpriteRenderer>().flipX = true;
+
+
+        //Move Right
+        rb.velocity = new Vector2(Speed * XAxis * Time.deltaTime, rb.velocity.y);
+        GetComponent<SpriteRenderer>().flipX = false;
+
         //Jumping
-        if (Input.GetKey(KeyCode.Space) && isGrounded)
+        if (Input.GetButtonDown("Jump") && isGrounded)
+        {
+            rb.velocity = new Vector2(rb.velocity.x, JumpingPower);
+        }
+        
+
+        /*if (Input.GetKey(KeyCode.Space) && isGrounded)
         {
             rb.velocity = new Vector2(rb.velocity.x, JumpingPower);
         }
 
-        //Move Left
+       
+        
         if (Input.GetKey(KeyCode.A))
         {
             transform.Translate(-Speed * Time.deltaTime, 0, 0);
@@ -83,20 +108,22 @@ public class movement : MonoBehaviour
             
         }
 
-        //Move Right
+        
+        
+
         if (Input.GetKey(KeyCode.D))
         {
             transform.Translate(Speed * Time.deltaTime, 0, 0);
             GetComponent<SpriteRenderer>().flipX = false;
             
-        }
+        }*/
 
 
 
-        
-        
 
-        
+
+
+
     }
 
 

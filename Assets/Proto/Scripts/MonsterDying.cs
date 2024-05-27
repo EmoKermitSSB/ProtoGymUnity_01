@@ -13,6 +13,8 @@ public class MonsterDying : MonoBehaviour
     [SerializeField] private int Mo_health;
     [SerializeField] GameObject music;
     [SerializeField] GameObject Score;
+    [SerializeField] int mobcount = 0;
+
 
     void Start()
     {
@@ -39,7 +41,7 @@ public class MonsterDying : MonoBehaviour
             music = GameObject.Find("=====Sounds=====");
             Score = GameObject.Find("SoulAmount");
             ScoreScript.scoreCount += FloorSoul + ScoreScript.SoulBoost;
-
+            mobcount += 1;
             gameObject.SetActive(false);
             audioManager = music.GetComponent<AudioManager>();
             audioManager.PlaySFX(audioManager.DieE);

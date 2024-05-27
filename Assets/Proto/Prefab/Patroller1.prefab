@@ -17,7 +17,7 @@ GameObject:
   - component: {fileID: 8400133039120268520}
   m_Layer: 0
   m_Name: Patroller1
-  m_TagString: Untagged
+  m_TagString: Monster
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -101,11 +101,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 72d26b3b460934746a4d0c88164e1435, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  EnemyData: {fileID: 11400000, guid: 8f2b9a61bca3fb941878b05c20761102, type: 2}
   audioManager: {fileID: 0}
   scoreScript: {fileID: 0}
   Mo_maxHealth: 3
+  FloorSoul: 0
+  FloorCount: 0
   Mo_health: 0
+  music: {fileID: 0}
+  Score: {fileID: 0}
 --- !u!114 &2907661429222728427
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -135,9 +138,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2de44ccc5d3ad1b458b3faedf550b456, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enemyData: {fileID: 0}
+  damage: 1
   playerHealth: {fileID: 0}
   monsterDying: {fileID: 833122347960676682}
+  player: {fileID: 0}
 --- !u!50 &8311398080424360606
 Rigidbody2D:
   serializedVersion: 4
@@ -150,10 +154,10 @@ Rigidbody2D:
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
-  m_Mass: 1
+  m_Mass: 49.49
   m_LinearDrag: 0
   m_AngularDrag: 0.05
-  m_GravityScale: 1
+  m_GravityScale: 92.3
   m_Material: {fileID: 0}
   m_IncludeLayers:
     serializedVersion: 2
