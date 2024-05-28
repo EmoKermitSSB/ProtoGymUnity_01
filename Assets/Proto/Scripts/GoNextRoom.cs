@@ -100,13 +100,12 @@ public class GoNextRoom : MonoBehaviour
 
     IEnumerator StartRoom()
     {
-        Debug.Log("Salam");
         move.XAxis = 0;
         move.rb.velocity = new Vector2 (0,0);
 
         move.CanMoov = false;
         
-        yield return new WaitForSeconds(2f);
+        yield return new WaitForSeconds(0.5f);
 
         move.CanMoov = true;
     }
