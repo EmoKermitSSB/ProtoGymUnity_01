@@ -63,8 +63,6 @@ public class movement : MonoBehaviour
 
     [SerializeField] public Rigidbody2D rb;
 
-    [SerializeField] public RigidbodyConstraints2D rbcon;
-
     [SerializeField] public static float JumpingPower = 21.5f;
      
     [SerializeField] PlayerDamage Playerdamage;
@@ -80,12 +78,22 @@ public class movement : MonoBehaviour
 
         //Move Left
         rb.velocity = new Vector2(Speed * -XAxis * Time.deltaTime, rb.velocity.y);
-        GetComponent<SpriteRenderer>().flipX = true;
+
+        if (XAxis < -0.01f)
+        {
+            GetComponent<SpriteRenderer>().flipX = true;
+        }
+
 
 
         //Move Right
         rb.velocity = new Vector2(Speed * XAxis * Time.deltaTime, rb.velocity.y);
-        GetComponent<SpriteRenderer>().flipX = false;
+
+        if (XAxis > 0.01f){
+            GetComponent<SpriteRenderer>().flipX = false;
+        }
+        
+        
 
         //Jumping
         if (Input.GetButtonDown("Jump") && isGrounded)

@@ -1916,8 +1916,8 @@ MonoBehaviour:
   m_ShadowVolumeIntensityEnabled: 0
   m_ShadowVolumeIntensity: 0.75
   m_LocalBounds:
-    m_Center: {x: 0.0018000007, y: -0.0058999956, z: 0}
-    m_Extent: {x: 0.9936, y: 0.9865, z: 0}
+    m_Center: {x: -0.006799996, y: 0.006850004, z: 0}
+    m_Extent: {x: 0.9918, y: 0.98985, z: 0}
   m_PointLightInnerAngle: 360
   m_PointLightOuterAngle: 360
   m_PointLightInnerRadius: 0
@@ -2489,11 +2489,10 @@ MonoBehaviour:
   GroundLayer:
     serializedVersion: 2
     m_Bits: 64
-  DashSpeed: 10
   rb: {fileID: 1875912449}
+  rbcon: 0
   Playerdamage: {fileID: 1875912446}
   XAxis: 0
-  Jump: 0
 --- !u!114 &1875912446
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2543,7 +2542,7 @@ BoxCollider2D:
   m_GameObject: {fileID: 1875912444}
   m_Enabled: 1
   m_Density: 1
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 6200000, guid: 39eff7136a1f6274184569bcc4b672ad, type: 2}
   m_IncludeLayers:
     serializedVersion: 2
     m_Bits: 0
@@ -3477,6 +3476,7 @@ MonoBehaviour:
   Mo_health: 0
   music: {fileID: 0}
   Score: {fileID: 0}
+  mobcount: 0
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0

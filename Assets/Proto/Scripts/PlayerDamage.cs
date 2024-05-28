@@ -70,7 +70,7 @@ public class PlayerDamage : MonoBehaviour
 
         if (GetComponent<SpriteRenderer>().flipX == false)
         {
-            if (Input.GetKey(KeyCode.Keypad4))
+            if (Input.GetButtonDown("Attack"))
             {
                 hitboxfront.SetActive(true);
             }
@@ -85,7 +85,7 @@ public class PlayerDamage : MonoBehaviour
 
         if (GetComponent<SpriteRenderer>().flipX == true)
         {
-            if (Input.GetKey(KeyCode.Keypad4))
+            if (Input.GetButtonDown("Attack"))
             {
                 hitboxback.SetActive(true);
             }
