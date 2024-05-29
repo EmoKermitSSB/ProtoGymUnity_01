@@ -69,6 +69,8 @@ public class movement : MonoBehaviour
 
     [SerializeField] public float XAxis;
 
+    [SerializeField] Animator PlayerAnimator;
+
     
     void moving()
     {
@@ -81,7 +83,19 @@ public class movement : MonoBehaviour
 
         if (XAxis < -0.01f)
         {
+            PlayerAnimator.SetBool("IsRunning", true);
             GetComponent<SpriteRenderer>().flipX = true;
+        }
+
+        if (XAxis > 0.01f)
+        {
+            PlayerAnimator.SetBool("IsRunning", true);
+            GetComponent<SpriteRenderer>().flipX = false;
+        }
+      
+        if (XAxis == 0)
+        {
+            PlayerAnimator.SetBool("IsRunning", false);
         }
 
 
@@ -89,17 +103,27 @@ public class movement : MonoBehaviour
         //Move Right
         rb.velocity = new Vector2(Speed * XAxis * Time.deltaTime, rb.velocity.y);
 
-        if (XAxis > 0.01f){
-            GetComponent<SpriteRenderer>().flipX = false;
+        
+        if (isGrounded)
+        {
+            PlayerAnimator.SetBool("IsJumping", false);
         }
-        
-        
+        if (!isGrounded)
+        {
+            PlayerAnimator.SetBool("IsJumping", true);
+        }
+        if (XAxis == 0 && !isGrounded)
+        {
+            PlayerAnimator.speed = 2f;
+        }
 
         //Jumping
         if (Input.GetButtonDown("Jump") && isGrounded)
         {
+
             rb.velocity = new Vector2(rb.velocity.x, JumpingPower);
         }
+       
         
 
         /*if (Input.GetKey(KeyCode.Space) && isGrounded)
