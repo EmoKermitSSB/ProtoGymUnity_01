@@ -25,6 +25,8 @@ public class PlayerHealth : MonoBehaviour
     [SerializeField] GoNextRoom goNextRoom;
     [SerializeField] GameObject Spawn;
 
+    [SerializeField] PlayerDamage PlayerDamage;
+    [SerializeField] movement move;
 
     [SerializeField] GameObject Player;
     [SerializeField]public GameObject RoomSpawn;
@@ -60,6 +62,8 @@ public class PlayerHealth : MonoBehaviour
             Spawn = GameObject.FindGameObjectWithTag("Spawn");
             Player.transform.position = Spawn.transform.position;
 
+            move.CanMoov = true;
+            PlayerDamage.CanAttack = true;
             health = 3;
             Heart[1].gameObject.SetActive(true);
             Heart[2].gameObject.SetActive(true);

@@ -11,7 +11,12 @@ public class PlayerDamage : MonoBehaviour
     [SerializeField] GameObject hitboxfront;
     [SerializeField] GameObject hitboxback;
     [SerializeField] Rigidbody2D _rigibody;
-    
+    [SerializeField] Animator PlayerAnimator;
+    [SerializeField] movement move;
+
+    [SerializeField] public bool CanAttack = true;
+
+
 
 
     public bool hitboxRight = false;
@@ -24,7 +29,7 @@ public class PlayerDamage : MonoBehaviour
         hitboxback.SetActive(false);
     }
 
-    private void FixedUpdate()
+    private void Update()
     {
         Attack();
     }
@@ -68,36 +73,21 @@ public class PlayerDamage : MonoBehaviour
 
 
 
-        if (GetComponent<SpriteRenderer>().flipX == false)
+        if (Input.GetButtonDown("Attack") && move.isGrounded && CanAttack == true)
         {
-            if (Input.GetButtonDown("Attack"))
-            {
-                hitboxfront.SetActive(true);
-            }
+            StartCoroutine(ActiveHitbox());
+            StartCoroutine(AnimAttack());
 
-            else
-            {
-                hitboxfront.SetActive(false);
-                hitboxRight = false;
-            }
         }
-        
 
-        if (GetComponent<SpriteRenderer>().flipX == true)
+
+
+        if (Input.GetButtonDown("Attack") && move.isGrounded && CanAttack == true)
         {
-            if (Input.GetButtonDown("Attack"))
-            {
-                hitboxback.SetActive(true);
-            }
+            StartCoroutine(ActiveHitbox());
+            StartCoroutine(AnimAttack());
 
-            else
-            {
-                hitboxback.SetActive(false);
-                hitboxLeft = false;
-            }
         }
-        
-
     }
 
 
@@ -120,5 +110,44 @@ public class PlayerDamage : MonoBehaviour
             }
 
         }
+    }
+
+    IEnumerator AnimAttack()
+    {
+        move.XAxis = 0;
+        move.rb.velocity = new Vector2(0, 0);
+        move.CanMoov = false;
+        PlayerAnimator.SetBool("IsAttacking", true);
+        CanAttack = false;
+        
+        yield return new WaitForSeconds(0.5f);
+
+        CanAttack = true;
+        move.CanMoov = true;
+        PlayerAnimator.SetBool("IsAttacking", false);
+    }
+
+    IEnumerator ActiveHitbox()
+    {
+        if (GetComponent<SpriteRenderer>().flipX == false)
+        {
+
+            hitboxfront.SetActive(true);
+        }
+
+
+
+        if (GetComponent<SpriteRenderer>().flipX == true)
+        {
+
+
+            hitboxback.SetActive(true);
+
+        }
+
+        yield return new WaitForSeconds(0.2f);
+
+        hitboxfront.SetActive(false);
+        hitboxback.SetActive(false);
     }
 }

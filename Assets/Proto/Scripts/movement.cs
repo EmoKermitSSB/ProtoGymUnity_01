@@ -31,7 +31,7 @@ public class movement : MonoBehaviour
 
     //---------------------------------GROUNDCHECK----------------------------------------------//
 
-    [SerializeField] bool isGrounded = false;
+    [SerializeField]public  bool isGrounded = false;
 
     [SerializeField] Transform GroundCheckCollider;
 
