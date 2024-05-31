@@ -70,7 +70,7 @@ public class ShopControlScript : MonoBehaviour
     public void exitShop()
     {
         GoNextRoom.RoomInd = 0;
-        SceneManager.LoadSceneAsync(GoNextRoom.RoomInd);
+        SceneManager.LoadScene("Floor1");
     }
 
     public void BuyingDamage()
@@ -78,7 +78,6 @@ public class ShopControlScript : MonoBehaviour
         if (MaxUpgrade1 != 4)
         {
             PlayerDamage.damage += 1;
-            Debug.Log(PlayerDamage.damage);
             ScoreScript.scoreCount -= UpgradePrice;
             MaxUpgrade1 += 1;
         }
