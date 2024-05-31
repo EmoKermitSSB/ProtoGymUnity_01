@@ -2466,6 +2466,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8dc2a131c3de8c34ebbf2f6e39b1f245, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!212 &1875912452 stripped
+SpriteRenderer:
+  m_CorrespondingSourceObject: {fileID: 7265836959659667495, guid: bff4ff0b82d7b1441a4ddf2ac519aea0, type: 3}
+  m_PrefabInstance: {fileID: 5188416558983044414}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &1889410887 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 8585517230054818084, guid: 0234eabbcc9fa0f47910ad7e9c63ea15, type: 3}
@@ -3245,6 +3250,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1600714646499426240, guid: bff4ff0b82d7b1441a4ddf2ac519aea0, type: 3}
+      propertyPath: sr
+      value: 
+      objectReference: {fileID: 1875912452}
     - target: {fileID: 1600714646499426240, guid: bff4ff0b82d7b1441a4ddf2ac519aea0, type: 3}
       propertyPath: RoomSpawn
       value: 

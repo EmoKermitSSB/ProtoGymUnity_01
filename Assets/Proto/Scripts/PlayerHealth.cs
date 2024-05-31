@@ -9,15 +9,15 @@ public class PlayerHealth : MonoBehaviour
 {
     void Start()
     {
-
+        old = sr.color;
     }
     void Update()
     {
         UIHealth();
     }
-
-
-
+    Color tran;
+    Color old;
+    [SerializeField] SpriteRenderer sr;
 
     [SerializeField] GameObject[] Heart;
     [SerializeField] int health ;
@@ -61,7 +61,7 @@ public class PlayerHealth : MonoBehaviour
             ScoreScript.scoreCount -= 5;
             Spawn = GameObject.FindGameObjectWithTag("Spawn");
             Player.transform.position = Spawn.transform.position;
-
+            sr.color = old;
             move.CanMoov = true;
             PlayerDamage.CanAttack = true;
             health = 3;
@@ -82,22 +82,26 @@ public class PlayerHealth : MonoBehaviour
 
 //TakeDamage qui s'appelle quand le player doit subir des dégats 
 public void TakeDamage(int damage)
-    {
-        health -= damage;
+    {       
+            StartCoroutine(Blink());
+            health -= damage;
     }
 
-
-
-
-
+IEnumerator Blink()
+    {
+        sr.color = new Color(0, 0, 0);
+        yield return new WaitForSeconds(0.09f);
+        sr.color = old;
+    }
 
     public int ArrowDamage;
 
     //Collision qui sert a détecter si une fleche touche le player il subis des dégats
     private void OnCollisionEnter2D(Collision2D other)
     {
-        if (other.gameObject.CompareTag("Arrow"))
+        if (other.gameObject.CompareTag("Arrow") )
         {
+            StartCoroutine(Blink());
             TakeDamage(ArrowDamage);
             other.gameObject.SetActive(false);
         }
