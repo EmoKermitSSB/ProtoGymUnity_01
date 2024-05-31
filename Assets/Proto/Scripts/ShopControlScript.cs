@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
+using UnityEngine.Rendering.VirtualTexturing;
 
 public class ShopControlScript : MonoBehaviour
 {
@@ -67,10 +68,12 @@ public class ShopControlScript : MonoBehaviour
         UpgradePrice4.text = "25";
     }
 
+ 
     public void exitShop()
     {
         GoNextRoom.RoomInd = 0;
         SceneManager.LoadScene("Floor1");
+        
     }
 
     public void BuyingDamage()

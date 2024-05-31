@@ -12,6 +12,8 @@ TagManager:
   - TP
   - Spawn
   - Cam
+  - Procedural
+  - TriggerShop
   layers:
   - Default
   - TransparentFX
