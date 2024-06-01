@@ -59,7 +59,7 @@ public class movement : MonoBehaviour
 
     //---------------------------------MOVEMENT----------------------------------------------//
 
-    [SerializeField]public static int Speed = 1000;
+    [SerializeField]public static int Speed = 15;
 
     [SerializeField] public Rigidbody2D rb;
 
@@ -79,7 +79,7 @@ public class movement : MonoBehaviour
         
 
         //Move Left
-        rb.velocity = new Vector2(Speed * -XAxis * Time.deltaTime, rb.velocity.y);
+        rb.velocity = new Vector2(Speed * -XAxis , rb.velocity.y);
 
         if (XAxis < -0.01f)
         {
@@ -101,7 +101,7 @@ public class movement : MonoBehaviour
 
 
         //Move Right
-        rb.velocity = new Vector2(Speed * XAxis * Time.deltaTime, rb.velocity.y);
+        rb.velocity = new Vector2(Speed * XAxis, rb.velocity.y);
 
         
         if (isGrounded)

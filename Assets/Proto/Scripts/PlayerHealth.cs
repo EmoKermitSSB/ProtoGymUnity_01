@@ -10,11 +10,14 @@ public class PlayerHealth : MonoBehaviour
     void Start()
     {
         old = sr.color;
+        ActualMaterial = sr.material;
     }
     void Update()
     {
         UIHealth();
     }
+
+
     Color tran;
     Color old;
     [SerializeField] SpriteRenderer sr;
@@ -63,6 +66,7 @@ public class PlayerHealth : MonoBehaviour
             Player.transform.position = Spawn.transform.position;
             sr.color = old;
             move.CanMoov = true;
+            invincible = false;
             PlayerDamage.CanAttack = true;
             health = 3;
             Heart[1].gameObject.SetActive(true);
@@ -82,9 +86,14 @@ public class PlayerHealth : MonoBehaviour
 
 //TakeDamage qui s'appelle quand le player doit subir des dégats 
 public void TakeDamage(int damage)
-    {       
+    {       if (invincible == false)
+        {
             StartCoroutine(Blink());
             health -= damage;
+            StartCoroutine(Intangible());
+
+        }
+            
     }
 
 IEnumerator Blink()
@@ -101,12 +110,56 @@ IEnumerator Blink()
     {
         if (other.gameObject.CompareTag("Arrow") )
         {
-            StartCoroutine(Blink());
-            TakeDamage(ArrowDamage);
             other.gameObject.SetActive(false);
+            TakeDamage(ArrowDamage);
+            StartCoroutine(Blink());
+            
         }
     }
+    [SerializeField] Material ActualMaterial;
+    [SerializeField] Material flashMaterial;
+    bool invincible = false;
+    
+    IEnumerator Intangible()
+    {
+        invincible = true;
+        sr.material = flashMaterial;
 
+        yield return new WaitForSeconds(0.3f);
+
+        invincible = true;
+        sr.material = ActualMaterial;
+
+        yield return new WaitForSeconds(0.3f);
+
+        invincible = true;
+        sr.material = flashMaterial;
+
+        yield return new WaitForSeconds(0.3f);
+
+        invincible = true;
+        sr.material = ActualMaterial;
+
+        yield return new WaitForSeconds(0.3f);
+
+        invincible = true;
+        sr.material = flashMaterial;
+
+        yield return new WaitForSeconds(0.3f);
+
+        invincible = true;
+        sr.material = ActualMaterial;
+
+        yield return new WaitForSeconds(0.3f);
+
+        invincible = true;
+        sr.material = flashMaterial;
+
+        yield return new WaitForSeconds(0.3f);
+
+        sr.material = ActualMaterial;
+        invincible = false;
+    }
 
 }
 

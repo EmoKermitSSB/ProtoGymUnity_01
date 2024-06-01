@@ -91,7 +91,7 @@ public class ShopControlScript : MonoBehaviour
     {
         if (MaxUpgrade2 != 4)
         {
-            movement.Speed += 100;
+            movement.Speed += 1;
             ScoreScript.scoreCount -= UpgradePrice;
             MaxUpgrade2 += 1;
         }
