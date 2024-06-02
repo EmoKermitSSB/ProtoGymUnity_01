@@ -13,7 +13,6 @@ public class GameManager : MonoBehaviour
     {
         timecount = Time.deltaTime;
         Screen.SetResolution(1920, 1080, true);
-        DontDestroyOnLoad(Music);
         DontDestroyOnLoad(Sounds);
     }
 

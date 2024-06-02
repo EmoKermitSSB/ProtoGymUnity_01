@@ -42,6 +42,7 @@ public class ProceduralManager : MonoBehaviour
                 var room0 = Instantiate(Room0, spawnroom.transform.position, spawnroom.transform.rotation);
                 spawnroom.transform.Translate(30, 0, 0);
             }
+
             RandNum = UnityEngine.Random.Range(0, array.Length);
             var Room = Instantiate(array[RandNum], spawnroom.transform.position, spawnroom.transform.rotation);
             RoomCount = RoomCount + 1;

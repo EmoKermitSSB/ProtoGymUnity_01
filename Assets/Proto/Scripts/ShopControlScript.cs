@@ -40,7 +40,7 @@ public class ShopControlScript : MonoBehaviour
     {
         Prices();
 
-        if (ScoreScript.scoreCount >= 25)
+        /*if (ScoreScript.scoreCount >= 25)
             buyButton1.interactable = true;
         else
             buyButton1.interactable = false;
@@ -58,14 +58,69 @@ public class ShopControlScript : MonoBehaviour
         if (ScoreScript.scoreCount >= 25)
             buyButton4.interactable = true;
         else
-            buyButton4.interactable = false;
+            buyButton4.interactable = false;*/
     }
     public void Prices()
     {
-        UpgradePrice1.text = "25";
-        UpgradePrice2.text = "25";
-        UpgradePrice3.text = "25";
-        UpgradePrice4.text = "25";
+        if (MaxUpgrade1 != 4)
+        {
+            if (ScoreScript.scoreCount >= 25)
+                buyButton1.interactable = true;
+            else
+                buyButton1.interactable = false;
+            UpgradePrice1.text = "25";
+        }
+        else
+        {
+            buyButton1.interactable = false;
+            UpgradePrice1.text = "Full";
+        }
+
+
+        if (MaxUpgrade2 != 4)
+        {
+            if (ScoreScript.scoreCount >= 25)
+                buyButton2.interactable = true;
+            else
+                buyButton2.interactable = false;
+            UpgradePrice2.text = "25";
+        }
+        else
+        {
+            buyButton2.interactable = false;
+            UpgradePrice2.text = "Full";
+        }
+
+
+        if (MaxUpgrade3 != 4)
+        {
+            if (ScoreScript.scoreCount >= 25)
+                buyButton3.interactable = true;
+            else
+                buyButton3.interactable = false;
+            UpgradePrice3.text = "25";
+        }
+        else
+        {
+            buyButton3.interactable = false;
+            UpgradePrice3.text = "Full";
+        }
+
+
+        if (MaxUpgrade4 != 4)
+        {
+            if (ScoreScript.scoreCount >= 25)
+                buyButton4.interactable = true;
+            else
+                buyButton4.interactable = false;
+            UpgradePrice4.text = "25";
+        }
+        else
+        {
+            buyButton4.interactable = false;
+            UpgradePrice4.text = "Full";
+        }
+
     }
 
  
@@ -117,6 +172,7 @@ public class ShopControlScript : MonoBehaviour
             ScoreScript.scoreCount -= UpgradePrice;
             MaxUpgrade4 += 1;
         }
+        
 
     }
 }

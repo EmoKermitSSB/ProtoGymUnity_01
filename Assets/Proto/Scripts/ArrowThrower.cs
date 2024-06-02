@@ -32,6 +32,7 @@ public class ArrowThrowerDelayed: MonoBehaviour
         yield return new WaitForSeconds(timer);
 
         var bullet = Instantiate(bulletPrefab, bulletSpawnPoint.position, bulletSpawnPoint.rotation);
+        
 
         StartCoroutine(SpawnBullet(Timer));
     }
