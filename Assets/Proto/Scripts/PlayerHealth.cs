@@ -69,6 +69,7 @@ public class PlayerHealth : MonoBehaviour
             invincible = false;
             PlayerDamage.CanAttack = true;
             health = 3;
+            sr.material = ActualMaterial;
             Heart[1].gameObject.SetActive(true);
             Heart[2].gameObject.SetActive(true);
             Heart[0].gameObject.SetActive(true);
