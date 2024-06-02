@@ -127,7 +127,7 @@ public class ShopControlScript : MonoBehaviour
     public void exitShop()
     {
         GoNextRoom.RoomInd = 0;
-        SceneManager.LoadScene("Floor1");
+        SceneManager.LoadScene("FloorIsLava");
         
     }
 
