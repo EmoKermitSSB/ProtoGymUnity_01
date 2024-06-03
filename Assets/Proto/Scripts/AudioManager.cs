@@ -10,6 +10,7 @@ public class AudioManager : MonoBehaviour
     [Header("--------- Audio Clip ---------")]
     public AudioClip SwitchMenu;
     public AudioClip DieE;
+    public AudioClip ShopBuy;
 
     private void Awake()
     {
