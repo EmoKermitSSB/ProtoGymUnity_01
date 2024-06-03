@@ -60,6 +60,7 @@ public class ShopControlScript : MonoBehaviour
         else
             buyButton4.interactable = false;*/
     }
+
     public void Prices()
     {
         if (MaxUpgrade1 != 4)
