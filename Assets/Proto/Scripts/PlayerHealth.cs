@@ -34,6 +34,7 @@ public class PlayerHealth : MonoBehaviour
     [SerializeField] GameObject Player;
     [SerializeField]public GameObject RoomSpawn;
 
+    public static int DeathCount;
     //UI Coeur et System de vie 
     public void UIHealth() {
 
@@ -53,8 +54,9 @@ public class PlayerHealth : MonoBehaviour
         {
             Heart[2].gameObject.SetActive(false);
         }
-        
-        
+
+
+
 
         
 
@@ -69,6 +71,7 @@ public class PlayerHealth : MonoBehaviour
             invincible = false;
             PlayerDamage.CanAttack = true;
             health = 3;
+            DeathCount++;
             sr.material = ActualMaterial;
             Heart[1].gameObject.SetActive(true);
             Heart[2].gameObject.SetActive(true);

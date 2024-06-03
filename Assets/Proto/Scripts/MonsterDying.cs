@@ -13,7 +13,7 @@ public class MonsterDying : MonoBehaviour
     [SerializeField] private int Mo_health;
     [SerializeField] GameObject music;
     [SerializeField] GameObject Score;
-    [SerializeField] int mobcount = 0;
+    [SerializeField]public static int mobcount = 0;
 
 
     void Start()

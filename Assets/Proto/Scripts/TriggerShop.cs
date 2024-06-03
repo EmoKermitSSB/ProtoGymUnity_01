@@ -32,10 +32,12 @@ public class TriggerShop : MonoBehaviour
         }
     }
 
+    public static float finishtime;
     private void VerifEnd()
     {
         if (TourShop >= 7) 
         {
+            finishtime = GameManager.timecount;
             SceneManager.LoadScene("EndGame");
         }
     }

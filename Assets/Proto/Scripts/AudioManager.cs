@@ -16,6 +16,12 @@ public class AudioManager : MonoBehaviour
     {
         //On recupère les musiques pour ne pas les destroy dans les autres scenes
         GameObject[] musicObj = GameObject.FindGameObjectsWithTag("GameMusic");
+
+        if (musicObj.Length > 1)
+        {
+            Destroy(this.gameObject);
+        }
+
         DontDestroyOnLoad(this.gameObject);
         
     }
