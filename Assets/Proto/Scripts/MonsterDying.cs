@@ -22,7 +22,7 @@ public class MonsterDying : MonoBehaviour
         Mo_health = Mo_maxHealth;
         FloorCount = 0;
         FloorSoul = 0;
-        FloorSoul += 5;
+        FloorSoul += 50;
         FloorSoul += FloorCount;
     }
 
